@@ -9,7 +9,17 @@ export class ProgressComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
+  progreso1 = 30;
+  progreso2 =60;
+  async ngOnInit() {
+
+    
   }
+
+
+  
+
+
+  
 
 }
