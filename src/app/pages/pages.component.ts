@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from "@angular/core";
 
+declare function init_plugins();
 @Component({
-  selector: 'app-pages',
-  templateUrl: './pages.component.html',
+  selector: "app-pages",
+  templateUrl: "./pages.component.html",
   styles: []
 })
 export class PagesComponent implements OnInit {
-
-  constructor() { }
+  constructor() {}
 
   ngOnInit() {
+    //llamado de función que carga los plugins
+    init_plugins();
   }
-
 }
