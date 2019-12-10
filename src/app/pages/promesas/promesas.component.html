@@ -1,1 +1,68 @@
-<p>promesas works!</p>
+<h1>Promesas</h1>
+
+<div class="row text-center">
+    <div class="col-md-12">
+        <button (click)="exportarExcel2()" class="btn btn-primary">Exportar</button>
+    </div>
+</div>
+<div #TABLE2 class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Pregunta</th>
+                <th colspan="4" class="text-center">Rspuestas y cantidades</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of arreglo; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ item.pregunta }}</td>
+
+                <td *ngFor="let item2 of item.respuestas">
+                    {{ item2 }}
+                </td>
+                <td *ngFor="let item2 of item.cantidades">{{ item2 }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<!-- https://www.c-sharpcorner.com/article/export-data-in-excel-sheet-using-angular/ -->
+
+<h3>tabla 2</h3>
+
+<div class="row text-center">
+    <div class="col-md-12">
+        <button (click)="exportarExcel()" class="btn btn-primary">Exportar</button>
+    </div>
+</div>
+
+<div #TABLE class="table-responsive">
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Pregunta</th>
+                <th class="text-center" colspan="8">
+                    Respuestas y cantidades
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of arreglo2; let i = index">
+                <th scope="row">{{ i + 1 }}</th>
+                <td>{{ item.pregunta }}</td>
+
+                <td *ngFor="let item2 of item.respuestas">{{ item2 }}</td>
+
+                <!-- <td *ngFor="let item2 of  item.respuestas">
+                    {{ item2 }}
+                </td>
+                <td *ngFor="let item2 of item.cantidades"> {{item2}} </td> -->
+            </tr>
+            <hr />
+            <hr />
+        </tbody>
+    </table>
+</div>

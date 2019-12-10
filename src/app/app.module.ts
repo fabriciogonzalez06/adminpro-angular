@@ -8,7 +8,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./login/login.component";
 import { RegisterComponent } from "./login/register.component";
-import { FormsModule } from "@angular/forms";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 //import { GraficaDonaComponent } from "./components/grafica-dona/grafica-dona.component";
 
 //importar el modulo de los servicios
@@ -21,9 +21,10 @@ import { ServiceModule } from "./services/service.module";
     PagesModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     ServiceModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

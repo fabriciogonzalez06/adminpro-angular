@@ -1,5 +1,7 @@
 import { NgModule } from "@angular/core";
 
+import { CommonModule } from "@angular/common";
+
 import { PagesComponent } from "./pages.component";
 
 import { Graficas1Component } from "./graficas1/graficas1.component";
@@ -16,11 +18,12 @@ import { ChartsModule } from "ng2-charts";
 
 import { IncrementadorComponent } from "../components/incrementador/incrementador.component";
 import { AccountSettingsComponent } from "./account-settings/account-settings.component";
-import { PromesasComponent } from './promesas/promesas.component';
+import { PromesasComponent } from "./promesas/promesas.component";
 
 //importar grafica donas
 import { GraficaDonaComponent } from "../components/grafica-dona/grafica-dona.component";
-import { RxJsComponent } from './rx-js/rx-js.component';
+import { RxJsComponent } from "./rx-js/rx-js.component";
+//import { importExpr } from '@angular/compiler/src/output/output_ast';
 
 @NgModule({
   declarations: [
@@ -40,6 +43,6 @@ import { RxJsComponent } from './rx-js/rx-js.component';
     ProgressComponent,
     Graficas1Component
   ],
-  imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule]
+  imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule]
 })
 export class PagesModule {}

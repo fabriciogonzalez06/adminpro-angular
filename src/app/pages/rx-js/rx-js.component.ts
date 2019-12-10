@@ -53,19 +53,20 @@ export class RxJsComponent implements OnInit, OnDestroy {
       }, 1000);
     }).pipe(
       map(resp => {
-        return resp.valor;
-      }),
-      filter((valor, index) => {
-        //valor es la data e index el indice en base 0
-        // console.log("filter", valor, index);
-
-        if (valor % 2 === 1) {
-          //impar
-          return true;
-        } else {
-          return false;
-        }
+        console.log("valor map", resp);
+        return resp;
       })
+      //filter((valor, index) => {
+      //valor es la data e index el indice en base 0
+      // console.log("filter", valor, index);
+
+      //if (valor % 2 === 1) {
+      //impar
+      //return true;
+      //} else {
+      //return false;
+      // }
+      //})
     );
   }
 }
