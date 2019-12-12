@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 //guard
 import { LoginGuardGuard } from './guards/login-guard.guard';
+import { SubirArchivoService } from './service.index';
 
 
+SubirArchivoService
 
 
 @NgModule({
   declarations: [],
   imports: [CommonModule, HttpClientModule],
-  providers: [SettingsService, SidebarService, SharedService, UsuarioService, LoginGuardGuard]
+  providers: [SettingsService, SidebarService, SharedService, UsuarioService, LoginGuardGuard, SubirArchivoService]
 })
 export class ServiceModule { }

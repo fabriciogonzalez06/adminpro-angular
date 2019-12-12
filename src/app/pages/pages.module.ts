@@ -20,10 +20,16 @@ import { IncrementadorComponent } from "../components/incrementador/incrementado
 import { AccountSettingsComponent } from "./account-settings/account-settings.component";
 import { PromesasComponent } from "./promesas/promesas.component";
 
+//Pipes
+import { PipesModule } from '../pipes/pipes.module';
+
 //importar grafica donas
 import { GraficaDonaComponent } from "../components/grafica-dona/grafica-dona.component";
 import { RxJsComponent } from "./rx-js/rx-js.component";
 //import { importExpr } from '@angular/compiler/src/output/output_ast';
+import { ProfileComponent } from './profile/profile.component';
+
+
 
 @NgModule({
   declarations: [
@@ -35,14 +41,16 @@ import { RxJsComponent } from "./rx-js/rx-js.component";
     GraficaDonaComponent,
     AccountSettingsComponent,
     PromesasComponent,
-    RxJsComponent
+    RxJsComponent,
+    ProfileComponent
   ],
   exports: [
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
-    Graficas1Component
+    Graficas1Component,
+    ProfileComponent
   ],
-  imports: [SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule]
+  imports: [CommonModule, SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule, PipesModule]
 })
-export class PagesModule {}
+export class PagesModule { }

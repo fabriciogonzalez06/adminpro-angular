@@ -8,6 +8,9 @@ import { NopagefoundComponent } from "./nopagefound/nopagefound.component";
 import { RouterModule } from "@angular/router";
 import { CommonModule } from "@angular/common";
 
+//Pipes
+import { PipesModule } from '../pipes/pipes.module';
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -15,7 +18,7 @@ import { CommonModule } from "@angular/common";
     BreadcrumbsComponent,
     NopagefoundComponent
   ],
-  imports: [RouterModule, CommonModule],
+  imports: [RouterModule, CommonModule, PipesModule],
 
   exports: [
     HeaderComponent,
@@ -24,4 +27,4 @@ import { CommonModule } from "@angular/common";
     NopagefoundComponent
   ]
 })
-export class SharedModule {}
+export class SharedModule { }

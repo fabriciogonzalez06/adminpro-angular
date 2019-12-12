@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Usuario } from '../../models/usuario.model';
 import { URL_SERVICIOS } from '../../config/config';
 import { map } from 'rxjs/operators';
@@ -8,6 +8,7 @@ import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2'
 import { Observable } from 'rxjs';
 import { Router } from '@angular/router';
+import { SubirArchivoService } from '../subir-archivo/subir-archivo.service';
 
 
 @Injectable({
@@ -18,7 +19,7 @@ export class UsuarioService {
   public usuario: Usuario;
   public token: string;
 
-  constructor(public http: HttpClient, public _router: Router) {
+  constructor(public http: HttpClient, public _router: Router, public _subirArchivoService: SubirArchivoService) {
     this.cargarStorage();
   }
 
@@ -134,6 +135,70 @@ export class UsuarioService {
       this.token = '';
       this.usuario = null;
     }
+
+  }
+
+  //=======================================================================
+  // Método para actualizar el usuario                                                                      
+  //=======================================================================
+
+  actualizarUsuario(usuario: Usuario) {
+
+    let url = URL_SERVICIOS + '/usuario/' + usuario._id;
+
+    url += '?token=' + this.token;
+
+    //let headers = new HttpHeaders().set('token', this.token);
+
+    /* let headers = new HttpHeaders().set('Content-Type', 'application/x-www-form-urlencoded')
+      .set('token', this.token); */
+
+    return this.http.put(url, usuario).pipe(
+      map((resp: any) => {
+
+        let usuarioDB: Usuario = resp.usuario;
+
+        this.guardarStorage(usuarioDB._id, this.token, usuarioDB);
+
+        Swal.fire({
+          title: 'Usuario actualizado',
+          text: usuario.nombre,
+          icon: 'success'
+        });
+
+        return true;
+
+      })
+    );
+
+
+  }
+
+
+  //=======================================================================
+  // Mëtodo para cambiar la imagen de un usuario del tipo que sea                                                                      
+  //=======================================================================
+
+  cambiarImagen(archivo: File, id: string) {
+
+
+    this._subirArchivoService.subirArchivo(archivo, 'usuarios', id).then((resp: any) => {
+      console.log(resp);
+      this.usuario.img = resp.usuario.img;
+
+
+
+      Swal.fire({
+        title: 'Imagen actualizada',
+        text: this.usuario.nombre,
+        icon: "success"
+      });
+
+      this.guardarStorage(this.usuario._id, this.token, this.usuario);
+
+    }).catch(resp => {
+      console.log(resp);
+    });
 
   }
 
