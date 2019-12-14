@@ -29,6 +29,10 @@ import { RxJsComponent } from "./rx-js/rx-js.component";
 //import { importExpr } from '@angular/compiler/src/output/output_ast';
 import { ProfileComponent } from './profile/profile.component';
 
+//mantenimiento
+import { UsuariosComponent } from './usuarios/usuarios.component';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+
 
 
 @NgModule({
@@ -42,14 +46,17 @@ import { ProfileComponent } from './profile/profile.component';
     AccountSettingsComponent,
     PromesasComponent,
     RxJsComponent,
-    ProfileComponent
+    ProfileComponent,
+    UsuariosComponent,
+    ModalUploadComponent
   ],
   exports: [
     PagesComponent,
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
-    ProfileComponent
+    ProfileComponent,
+    UsuariosComponent
   ],
   imports: [CommonModule, SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule, PipesModule]
 })
