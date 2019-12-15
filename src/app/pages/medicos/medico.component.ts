@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MedicoService } from '../../services/service.index';
+import { MedicoService } from '../../services/medico/medico.service';
 import { NgForm } from '@angular/forms';
 import { HospitalService } from 'src/app/services/service.index';
 import { Hospital } from '../../models/hospital.model';

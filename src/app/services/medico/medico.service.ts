@@ -4,11 +4,12 @@ import { URL_SERVICIOS } from '../../config/config';
 import { map } from 'rxjs/operators';
 import Swal from 'sweetalert2';
 import { Medico } from 'src/app/models/medico.model';
-import { UsuarioService } from 'src/app/services/service.index';
+import { UsuarioService } from 'src/app/services/usuario/usuario.service';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class MedicoService {
 
   public totalMedicos: number = 0;

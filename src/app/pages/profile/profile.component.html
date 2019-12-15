@@ -9,7 +9,7 @@
                         <label for="exampleInputuname">Nombre del usuario</label>
                         <div class="input-group">
                             <div class="input-group-addon"><i class="ti-user"></i></div>
-                            <input [ngModel]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Usuario" required />
+                            <input required [ngModel]="usuario.nombre" name="nombre" type="text" class="form-control" placeholder="Usuario" />
                         </div>
                     </div>
                     <div class="form-group">
@@ -20,9 +20,10 @@
                         </div>
                     </div>
 
-                    <button type="submit" class="btn btn-block btn-success waves-effect waves-light m-r-10">
-            <i class="fa fa-save"></i> Guardar
-          </button>
+                    <button type="submit" class="btn btn-block btn-success
+                        waves-effect waves-light m-r-10">
+                        <i class="fa fa-save"></i> Guardar
+                    </button>
                 </form>
             </div>
         </div>
@@ -30,20 +31,22 @@
 
     <div class="col-lg-5">
         <div class="card">
-            <div class="card-body ">
+            <div class="card-body">
                 <h4 class="card-title">Nombre de usuario</h4>
                 <h6 class="card-subtitle">Foto de usuario</h6>
 
                 <img *ngIf="!imagenTemp" [src]="usuario.img | imagen" class="img-fluid width150" alt="Imagen usuario" />
-                <img *ngIf="imagenTemp" [src]="imagenTemp" class="img-fluid width150" alt="Imagen usuario" />
+                <img *ngIf="imagenTemp" [src]="imagenTemp" class="img-fluid
+                    width150" alt="Imagen usuario" />
 
                 <input title="Seleccion una imagen" type="file" (change)="seleccionImagen($event.target.files[0])" />
 
                 <br /><br />
-                <button [disabled]="!imagenSubir" (click)="cambiarImagen()" type="button" class="btn btn-block btn-success waves-effect waves-light m-r-10">
-          <i class="fa fa-save"></i>
-          Actualizar foto
-        </button>
+                <button [disabled]="!imagenSubir" (click)="cambiarImagen()" type="button" class="btn btn-block btn-success waves-effect
+                    waves-light m-r-10">
+                    <i class="fa fa-save"></i>
+                    Actualizar foto
+                </button>
             </div>
         </div>
     </div>
