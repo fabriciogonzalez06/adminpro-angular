@@ -32,6 +32,11 @@ import { ProfileComponent } from './profile/profile.component';
 //mantenimiento
 import { UsuariosComponent } from './usuarios/usuarios.component';
 import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
+import { HospitalesComponent } from './hospitales/hospitales.component';
+import { MedicosComponent } from './medicos/medicos.component';
+import { MedicoComponent } from './medicos/medico.component';
+
+
 
 
 
@@ -48,7 +53,10 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
     RxJsComponent,
     ProfileComponent,
     UsuariosComponent,
-    ModalUploadComponent
+    ModalUploadComponent,
+    HospitalesComponent,
+    MedicosComponent,
+    MedicoComponent
   ],
   exports: [
     PagesComponent,
@@ -56,7 +64,10 @@ import { ModalUploadComponent } from '../components/modal-upload/modal-upload.co
     ProgressComponent,
     Graficas1Component,
     ProfileComponent,
-    UsuariosComponent
+    UsuariosComponent,
+    HospitalesComponent,
+    MedicosComponent,
+    MedicoComponent
   ],
   imports: [CommonModule, SharedModule, PAGES_ROUTES, FormsModule, ChartsModule, CommonModule, PipesModule]
 })
