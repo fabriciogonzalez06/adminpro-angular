@@ -23,6 +23,26 @@ export class UsuarioService {
     this.cargarStorage();
   }
 
+  //=======================================================================
+  // Método para renovar token                                                                      
+  //=======================================================================
+  renovarToken(): Observable<any> {
+    let url = URL_SERVICIOS + `/login/renovarToken?token=${this.token}`;
+
+    return this.http.get(url).pipe(
+      map((resp: any) => {
+
+        this.token = resp.token;
+        localStorage.setItem('token', this.token);
+
+      }),
+      catchError((resp) => {
+        Swal.fire('Error credenciales', 'sus credenciales no son correctas', 'error');
+        this.logout();
+        return throwError(resp.message);
+      })
+    );
+  }
 
   //=======================================================================
   // Función para guardar en el local storage                                                                      

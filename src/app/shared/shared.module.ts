@@ -10,9 +10,11 @@ import { CommonModule } from "@angular/common";
 
 //Pipes
 import { PipesModule } from '../pipes/pipes.module';
+import { ModalUploadComponent } from '../components/modal-upload/modal-upload.component';
 
 @NgModule({
   declarations: [
+    ModalUploadComponent,
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,
@@ -21,6 +23,7 @@ import { PipesModule } from '../pipes/pipes.module';
   imports: [RouterModule, CommonModule, PipesModule],
 
   exports: [
+    ModalUploadComponent,
     HeaderComponent,
     SidebarComponent,
     BreadcrumbsComponent,

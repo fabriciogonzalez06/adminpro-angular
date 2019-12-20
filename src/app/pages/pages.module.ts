@@ -2,7 +2,7 @@ import { NgModule } from "@angular/core";
 
 import { CommonModule } from "@angular/common";
 
-import { PagesComponent } from "./pages.component";
+
 
 import { Graficas1Component } from "./graficas1/graficas1.component";
 import { ProgressComponent } from "./progress/progress.component";
@@ -43,7 +43,6 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
 
 @NgModule({
   declarations: [
-    PagesComponent,
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,
@@ -54,14 +53,14 @@ import { BusquedaComponent } from './busqueda/busqueda.component';
     RxJsComponent,
     ProfileComponent,
     UsuariosComponent,
-    ModalUploadComponent,
+
     HospitalesComponent,
     MedicosComponent,
     MedicoComponent,
     BusquedaComponent
   ],
   exports: [
-    PagesComponent,
+
     DashboardComponent,
     ProgressComponent,
     Graficas1Component,

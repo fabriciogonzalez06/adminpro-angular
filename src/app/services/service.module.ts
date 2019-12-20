@@ -15,11 +15,12 @@ import { MedicoService } from './service.index';
 //guard
 import { AdminGuard } from './service.index';
 import { LoginGuardGuard } from './guards/login-guard.guard';
+import { VerificaTokenGuard } from './guards/verifica-token.guard';
 
 
 
 
-SubirArchivoService
+
 
 
 @NgModule({
@@ -34,7 +35,8 @@ SubirArchivoService
     SharedService,
     UsuarioService,
     LoginGuardGuard,
-    SubirArchivoService
+    SubirArchivoService,
+    VerificaTokenGuard
   ]
 })
 export class ServiceModule { }

@@ -13,18 +13,21 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 //importar el modulo de los servicios
 import { ServiceModule } from "./services/service.module";
+import { PagesComponent } from './pages/pages.component';
+import { SharedModule } from './shared/shared.module';
+
 
 
 
 
 
 @NgModule({
-  declarations: [AppComponent, LoginComponent, RegisterComponent],
+  declarations: [AppComponent, LoginComponent, RegisterComponent, PagesComponent],
   imports: [
     BrowserModule,
-    PagesModule,
     AppRoutingModule,
     FormsModule,
+    SharedModule,
     ReactiveFormsModule,
     ServiceModule
   ],
